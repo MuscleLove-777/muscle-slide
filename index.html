@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>MuscleLove 筋肉スライドパズル 💪</title>
+  <meta name="description" content="フィットネス美女の画像でスライドパズルに挑戦！タイルをスライドして画像を完成させよう！">
+  <meta property="og:title" content="MuscleLove 筋肉スライドパズル 💪">
+  <meta property="og:description" content="フィットネス美女の画像でスライドパズルに挑戦！">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Start Screen -->
+  <div id="start-screen" class="screen active">
+    <div class="container">
+      <h1 class="main-title">
+        <span class="brand">MuscleLove</span>
+        <span class="subtitle">筋肉スライドパズル</span>
+      </h1>
+      <div class="start-visual">💪🧩</div>
+      <p class="description">フィットネス美女の画像をスライドして完成させよう！</p>
+
+      <div class="difficulty-select">
+        <h2>難易度を選択</h2>
+        <div class="difficulty-buttons">
+          <button class="btn btn-difficulty" data-size="3" data-label="Easy">
+            <span class="diff-name">Easy</span>
+            <span class="diff-grid">3×3</span>
+            <span class="diff-desc">初心者向け</span>
+          </button>
+          <button class="btn btn-difficulty selected" data-size="4" data-label="Normal">
+            <span class="diff-name">Normal</span>
+            <span class="diff-grid">4×4</span>
+            <span class="diff-desc">スタンダード</span>
+          </button>
+          <button class="btn btn-difficulty" data-size="5" data-label="Hard">
+            <span class="diff-name">Hard</span>
+            <span class="diff-grid">5×5</span>
+            <span class="diff-desc">上級者向け</span>
+          </button>
+        </div>
+      </div>
+
+      <button id="start-btn" class="btn btn-primary btn-large pulse">
+        🧩 パズル開始！
+      </button>
+
+      <div class="patreon-cta">
+        <a href="https://www.patreon.com/cw/MuscleLove" target="_blank" rel="noopener">
+          もっとMuscleLoveを楽しむ → Patreon
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <div class="container">
+      <div class="game-header">
+        <h1 class="game-title">
+          <span class="brand-sm">MuscleLove</span> スライドパズル
+        </h1>
+        <div class="game-stats">
+          <div class="stat">
+            <span class="stat-label">手数</span>
+            <span id="move-count" class="stat-value">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">タイム</span>
+            <span id="timer" class="stat-value">00:00</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">難易度</span>
+            <span id="difficulty-label" class="stat-value">Normal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-area">
+        <div id="puzzle-board" class="puzzle-board"></div>
+        <div class="side-panel">
+          <div class="reference-box">
+            <h3>完成図</h3>
+            <div id="reference-image" class="reference-image"></div>
+          </div>
+          <div class="game-controls">
+            <button id="shuffle-btn" class="btn btn-secondary">🔀 シャッフル</button>
+            <button id="back-btn" class="btn btn-secondary">🏠 戻る</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="patreon-cta bottom-cta">
+        <a href="https://www.patreon.com/cw/MuscleLove" target="_blank" rel="noopener">
+          💪 もっと見たいなら... Patreonをチェック！
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complete Screen -->
+  <div id="complete-screen" class="screen">
+    <div class="container">
+      <div id="completed-image-bg" class="completed-bg"></div>
+      <div class="complete-overlay">
+        <div class="complete-content">
+          <h1 class="complete-title">🎉 パズル完成！ 🎉</h1>
+          <div id="completed-image" class="completed-image"></div>
+          <div class="complete-stats">
+            <div class="result-stat">
+              <span class="result-label">手数</span>
+              <span id="result-moves" class="result-value">0</span>
+            </div>
+            <div class="result-stat">
+              <span class="result-label">タイム</span>
+              <span id="result-time" class="result-value">00:00</span>
+            </div>
+          </div>
+
+          <div class="complete-actions">
+            <button id="share-btn" class="btn btn-primary">
+              📱 結果をシェア (X)
+            </button>
+            <button id="retry-btn" class="btn btn-secondary">
+              🔄 もう一回！
+            </button>
+            <button id="home-btn" class="btn btn-secondary">
+              🏠 タイトルへ
+            </button>
+          </div>
+
+          <div class="patreon-cta complete-cta">
+            <a href="https://www.patreon.com/cw/MuscleLove" target="_blank" rel="noopener">
+              💪 もっと見たいなら... Patreonで限定コンテンツをチェック！
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="game.js"></script>
+</body>
+</html>
