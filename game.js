@@ -313,7 +313,7 @@
     }
 
     const selectedDiffBtn = document.querySelector('.btn-difficulty.selected');
-    const label = selectedDiffBtn ? selectedDiffBtn.dataset.label : 'Normal';
+    const label = selectedDiffBtn ? selectedDiffBtn.dataset.label : 'ふつう / Normal';
     difficultyLabel.textContent = label;
 
     // Set reference image
@@ -410,9 +410,9 @@
 
   // ===== SHARE =====
   function shareResult() {
-    const diffNames = { 3: 'Easy(3×3)', 4: 'Normal(4×4)', 5: 'Hard(5×5)' };
-    const diff = diffNames[state.gridSize] || 'Normal(4×4)';
-    const text = `【筋肉スライドパズル】${state.moves}手・${formatTime(state.seconds)}でクリア！（${diff}）💪\n#MuscleLove #筋肉パズル\nhttps://www.patreon.com/cw/MuscleLove`;
+    const diffNames = { 3: 'かんたん/Easy(3×3)', 4: 'ふつう/Normal(4×4)', 5: 'むずかしい/Hard(5×5)' };
+    const diff = diffNames[state.gridSize] || 'ふつう/Normal(4×4)';
+    const text = `【筋肉スライドパズル / Muscle Slide Puzzle】${state.moves}手(moves)・${formatTime(state.seconds)}でクリア！Cleared!（${diff}）💪\n#MuscleLove #筋肉パズル\nhttps://www.patreon.com/cw/MuscleLove`;
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   }

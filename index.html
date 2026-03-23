@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>MuscleLove 筋肉スライドパズル 💪</title>
-  <meta name="description" content="フィットネス美女の画像でスライドパズルに挑戦！タイルをスライドして画像を完成させよう！">
-  <meta property="og:title" content="MuscleLove 筋肉スライドパズル 💪">
-  <meta property="og:description" content="フィットネス美女の画像でスライドパズルに挑戦！">
+  <title>MuscleLove 筋肉スライドパズル / Muscle Slide Puzzle 💪</title>
+  <meta name="description" content="フィットネス美女の画像でスライドパズルに挑戦！Solve the fitness slide puzzle!">
+  <meta property="og:title" content="MuscleLove 筋肉スライドパズル / Muscle Slide Puzzle 💪">
+  <meta property="og:description" content="フィットネス美女の画像でスライドパズルに挑戦！Solve the fitness slide puzzle!">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
@@ -19,33 +19,37 @@
       <h1 class="main-title">
         <span class="brand">MuscleLove</span>
         <span class="subtitle">筋肉スライドパズル</span>
+        <span class="subtitle-en">Muscle Slide Puzzle</span>
       </h1>
       <div class="start-visual">💪🧩</div>
-      <p class="description">フィットネス美女の画像をスライドして完成させよう！</p>
+      <p class="description">
+        フィットネス美女の画像をスライドして完成させよう！
+        <span class="desc-en">Slide tiles to complete the fitness image!</span>
+      </p>
 
       <div class="difficulty-select">
-        <h2>難易度を選択</h2>
+        <h2>難易度を選択 <span class="label-en">/ Select Difficulty</span></h2>
         <div class="difficulty-buttons">
-          <button class="btn btn-difficulty" data-size="3" data-label="Easy">
-            <span class="diff-name">Easy</span>
+          <button class="btn btn-difficulty" data-size="3" data-label="かんたん / Easy">
+            <span class="diff-name">かんたん<span class="diff-name-en">Easy</span></span>
             <span class="diff-grid">3×3</span>
-            <span class="diff-desc">初心者向け</span>
+            <span class="diff-desc">初心者向け <span class="desc-en">Beginner</span></span>
           </button>
-          <button class="btn btn-difficulty selected" data-size="4" data-label="Normal">
-            <span class="diff-name">Normal</span>
+          <button class="btn btn-difficulty selected" data-size="4" data-label="ふつう / Normal">
+            <span class="diff-name">ふつう<span class="diff-name-en">Normal</span></span>
             <span class="diff-grid">4×4</span>
-            <span class="diff-desc">スタンダード</span>
+            <span class="diff-desc">スタンダード <span class="desc-en">Standard</span></span>
           </button>
-          <button class="btn btn-difficulty" data-size="5" data-label="Hard">
-            <span class="diff-name">Hard</span>
+          <button class="btn btn-difficulty" data-size="5" data-label="むずかしい / Hard">
+            <span class="diff-name">むずかしい<span class="diff-name-en">Hard</span></span>
             <span class="diff-grid">5×5</span>
-            <span class="diff-desc">上級者向け</span>
+            <span class="diff-desc">上級者向け <span class="desc-en">Advanced</span></span>
           </button>
         </div>
       </div>
 
       <button id="start-btn" class="btn btn-primary btn-large pulse">
-        🧩 パズル開始！
+        🧩 パズル開始！<span class="btn-en">/ Start!</span>
       </button>
 
       <div class="patreon-cta">
@@ -61,20 +65,20 @@
     <div class="container">
       <div class="game-header">
         <h1 class="game-title">
-          <span class="brand-sm">MuscleLove</span> スライドパズル
+          <span class="brand-sm">MuscleLove</span> スライドパズル <span class="title-en">/ Slide Puzzle</span>
         </h1>
         <div class="game-stats">
           <div class="stat">
-            <span class="stat-label">手数</span>
+            <span class="stat-label">手数 <span class="label-en">/ Moves</span></span>
             <span id="move-count" class="stat-value">0</span>
           </div>
           <div class="stat">
-            <span class="stat-label">タイム</span>
+            <span class="stat-label">タイム <span class="label-en">/ Time</span></span>
             <span id="timer" class="stat-value">00:00</span>
           </div>
           <div class="stat">
-            <span class="stat-label">難易度</span>
-            <span id="difficulty-label" class="stat-value">Normal</span>
+            <span class="stat-label">難易度 <span class="label-en">/ Level</span></span>
+            <span id="difficulty-label" class="stat-value">ふつう / Normal</span>
           </div>
         </div>
       </div>
@@ -83,12 +87,12 @@
         <div id="puzzle-board" class="puzzle-board"></div>
         <div class="side-panel">
           <div class="reference-box">
-            <h3>完成図</h3>
+            <h3>完成図 <span class="label-en">/ Goal</span></h3>
             <div id="reference-image" class="reference-image"></div>
           </div>
           <div class="game-controls">
-            <button id="shuffle-btn" class="btn btn-secondary">🔀 シャッフル</button>
-            <button id="back-btn" class="btn btn-secondary">🏠 戻る</button>
+            <button id="shuffle-btn" class="btn btn-secondary">🔀 シャッフル<span class="btn-en">/ Shuffle</span></button>
+            <button id="back-btn" class="btn btn-secondary">🏠 戻る<span class="btn-en">/ Back</span></button>
           </div>
         </div>
       </div>
@@ -107,28 +111,28 @@
       <div id="completed-image-bg" class="completed-bg"></div>
       <div class="complete-overlay">
         <div class="complete-content">
-          <h1 class="complete-title">🎉 パズル完成！ 🎉</h1>
+          <h1 class="complete-title">🎉 完成！<span class="complete-title-en">/ Complete!</span> 🎉</h1>
           <div id="completed-image" class="completed-image"></div>
           <div class="complete-stats">
             <div class="result-stat">
-              <span class="result-label">手数</span>
+              <span class="result-label">手数 <span class="label-en">/ Moves</span></span>
               <span id="result-moves" class="result-value">0</span>
             </div>
             <div class="result-stat">
-              <span class="result-label">タイム</span>
+              <span class="result-label">タイム <span class="label-en">/ Time</span></span>
               <span id="result-time" class="result-value">00:00</span>
             </div>
           </div>
 
           <div class="complete-actions">
             <button id="share-btn" class="btn btn-primary">
-              📱 結果をシェア (X)
+              📱 結果をシェア<span class="btn-en">/ Share (X)</span>
             </button>
             <button id="retry-btn" class="btn btn-secondary">
-              🔄 もう一回！
+              🔄 もう一度<span class="btn-en">/ Retry</span>
             </button>
             <button id="home-btn" class="btn btn-secondary">
-              🏠 タイトルへ
+              🏠 タイトルへ<span class="btn-en">/ Home</span>
             </button>
           </div>
 
